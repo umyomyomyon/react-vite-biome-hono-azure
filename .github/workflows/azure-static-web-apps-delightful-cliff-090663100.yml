@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main
+  # frontendディレクトリ内に変更があった場合のみプレビュー環境がデプロイされるようにする
   pull_request:
+    paths:
+      - 'frontend/**'
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
